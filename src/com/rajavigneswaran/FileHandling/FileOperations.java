@@ -33,9 +33,13 @@ public class FileOperations {
                     case 2:
                         System.out.print("Enter text to write: ");
                         String data = sc.nextLine();
+
                         FileWriter fw = new FileWriter(file, true);
+
                         fw.write(data + "\n");
+
                         fw.close();
+
                         System.out.println("Data written successfully.");
                         break;
 

@@ -23,6 +23,8 @@ public class HashMapDemo {
                 System.out.println("all keys: " + map.keySet());
                 System.out.println("all values: " + map.values());
                 System.out.println("all entries: " + map.entrySet());
+
+                System.out.println(map.getOrDefault(1,"Nothing"));
             }
         }
 
