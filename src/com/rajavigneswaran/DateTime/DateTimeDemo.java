@@ -1,42 +1,34 @@
 package com.rajavigneswaran.DateTime;
+
+import java.util.*;
 import java.time.*;
-import java.time.format.DateTimeFormatter;
+import java.time.format.*;
+public class DateTimeDemo
+{
+    public static void main(String[] args)
+    {
+        LocalDate d = LocalDate.now();
+        System.out.println("Date: " + d);
+
+        LocalTime t = LocalTime.now();
+        System.out.println("Time: " + t);
+
+        LocalDateTime dt = LocalDateTime.now();
+        System.out.println("Date & Time: " + dt);
+
+        LocalDate c = LocalDate.of(2025, 10, 17);
+        System.out.println("Custom Date: " + c);
+
+        LocalDate add = d.plusDays(10);
+        System.out.println("After 10 days: " + add);
+
+        LocalDate sub = d.minusMonths(2);
+        System.out.println("Before 2 months: " + sub);
+
+        DateTimeFormatter f = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss");
+        String s = dt.format(f);
+        System.out.println("Formatted: " + s);
 
 
-public class DateTimeDemo {
-
-    public static void main(String[] args) {
-        LocalDate today = LocalDate.now();
-        System.out.println("Current Date: " + today);
-
-        LocalTime time = LocalTime.now();
-        System.out.println("Current Time: " + time);
-
-        LocalDateTime dateTime = LocalDateTime.now();
-        System.out.println("Current Date and Time: " + dateTime);
-
-        LocalDate customDate = LocalDate.of(2025, Month.OCTOBER, 17);
-        System.out.println("Custom Date: " + customDate);
-
-        LocalDate futureDate = today.plusDays(10);
-        System.out.println("Date after 10 days: " + futureDate);
-
-        LocalDate pastDate = today.minusMonths(2);
-        System.out.println("Date before 2 months: " + pastDate);
-
-        Period period = Period.between(pastDate, futureDate);
-        System.out.println("Period between dates: " + period);
-
-        LocalDateTime formattedExample = LocalDateTime.now();
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss");
-
-        String formattedDate = formattedExample.format(formatter);
-        System.out.println("Formatted DateTime: " + formattedDate);
-
-        ZonedDateTime zoneDateTime = ZonedDateTime.now(ZoneId.of("Asia/Kolkata"));
-        System.out.println("DateTime with Time Zone: " + zoneDateTime);
-
-        Duration duration = Duration.ofHours(5);
-        System.out.println("Duration of 5 hours in seconds: " + duration.getSeconds());
     }
 }

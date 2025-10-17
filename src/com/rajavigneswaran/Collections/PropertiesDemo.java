@@ -7,24 +7,27 @@ public class PropertiesDemo {
     public static void main(String[] args) throws Exception {
         Properties props = new Properties();
 
+        props.setProperty("username", "raja");
+        props.setProperty("password", "pass");
+        props.setProperty("email", "raj@gmail.com");
 
-        props.setProperty("username", "Raj");
-        props.setProperty("password", "12345");
-        props.setProperty("url", "jdbc:mysql://localhost:3306/test");
+        System.out.println("properties data: " + props);
 
-        System.out.println("Username: " + props.getProperty("username"));
-        System.out.println("All Keys: " + props.stringPropertyNames());
+        System.out.println("username: " + props.getProperty("username"));
 
-        FileOutputStream fos = new FileOutputStream("config.properties");
-        props.store(fos, "Database Configuration");
-        fos.close();
+        FileOutputStream out = new FileOutputStream("data.properties");
+        props.store(out, "user Info");
+        out.close();
 
-        Properties loadProps = new Properties();
-        FileInputStream fis = new FileInputStream("config.properties");
-        loadProps.load(fis);
-        fis.close();
+        Properties readProps = new Properties();
 
-        System.out.println("\nLoaded from file:");
-        loadProps.list(System.out);
+        FileInputStream in = new FileInputStream("data.properties");
+        readProps.load(in);
+        in.close();
+
+        System.out.println("loaded from file:");
+        for (String key : readProps.stringPropertyNames()) {
+            System.out.println(key + " = " + readProps.getProperty(key));
+        }
     }
 }

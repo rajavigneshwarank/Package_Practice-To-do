@@ -5,24 +5,24 @@ import java.util.*;
 public class HashtableDemo {
     public static void main(String[] args) {
         Hashtable<Integer, String> table = new Hashtable<>();
-        table.put(101, "Raj");
-        table.put(102, "Vignesh");
-        table.put(103, "Kumar");
-        table.put(104, "Arun");
 
-        System.out.println("Hashtable: " + table);
-        System.out.println("Get key 102: " + table.get(102));
-        System.out.println("Contains key 103? " + table.containsKey(103));
-        System.out.println("Contains value 'Raj'? " + table.containsValue("Raj"));
+        table.put(1, "Raj");
+        table.put(2, "Kumar");
+        table.put(3, "Vignesh");
+        table.put(4, "Arun");
 
-        System.out.println("Keys: " + table.keys());
-        System.out.println("Values: " + table.elements());
+        System.out.println("all elements: " + table);
 
-        table.remove(104);
-        System.out.println("After Removing key 104: " + table);
+        System.out.println("value for key 2: " + table.get(2));
 
-        Hashtable<Integer, String> cloned = (Hashtable<Integer, String>) table.clone();
-        System.out.println("Cloned Hashtable: " + cloned);
+        table.remove(3);
+        System.out.println("after removing key 3: " + table);
+
+        System.out.println("contains key 4? " + table.containsKey(4));
+        System.out.println("contains value 'Raj'? " + table.containsValue("Raj"));
+
+        System.out.println("all keys: " + table.keys());
+        System.out.println("all values: " + table.elements());
     }
 }
 

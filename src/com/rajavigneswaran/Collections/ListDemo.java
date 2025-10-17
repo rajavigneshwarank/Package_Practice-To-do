@@ -4,28 +4,29 @@ import java.util.*;
 
 public class ListDemo {
     public static void main(String[] args) {
-        List<String> fruits = new ArrayList<>();
-        fruits.add("Mango");
-        fruits.add("Apple");
-        fruits.add("Banana");
-        fruits.add("Orange");
-        fruits.add(1, "Grapes");
+        ArrayList<String> list = new ArrayList<>();
 
-        System.out.println("Original List: " + fruits);
-        fruits.remove("Banana");
-        fruits.set(2, "Pineapple");
+        list.add("Mango");
+        list.add("Apple");
+        list.add("Orange");
+        list.add("Grapes");
 
-        System.out.println("After Modifications: " + fruits);
-        System.out.println("Contains Mango? " + fruits.contains("Mango"));
-        System.out.println("Index of Orange: " + fruits.indexOf("Orange"));
+        System.out.println("all elements " + list);
+        System.out.println("element at index 1: " + list.get(1));
 
-        fruits.sort(Comparator.naturalOrder());
-        System.out.println("Sorted List: " + fruits);
+        list.set(2, "pineapple");
+        System.out.println("after changing index 2: " + list);
 
-        fruits.replaceAll(f -> f.toUpperCase());
-        System.out.println("Uppercase List: " + fruits);
+        list.remove("Grapes");
+        System.out.println("after removing Grapes: " + list);
 
-        System.out.println("Using forEach:");
-        fruits.forEach(System.out::println);
+        System.out.println("contains Mango? " + list.contains("Mango"));
+        System.out.println("list size: " + list.size());
+        System.out.println("is list empty? " + list.isEmpty());
+
+        System.out.println("iterating through list:");
+        for (String item : list) {
+            System.out.println(item);
+        }
     }
 }

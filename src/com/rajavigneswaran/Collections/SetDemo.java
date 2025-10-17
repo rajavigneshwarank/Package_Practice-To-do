@@ -4,25 +4,27 @@ import java.util.*;
 
 public class SetDemo {
     public static void main(String[] args) {
-        Set<Integer> set1 = new HashSet<>(Arrays.asList(10, 20, 30, 40));
-        Set<Integer> set2 = new HashSet<>(Arrays.asList(30, 40, 50, 60));
+        HashSet<String> set = new HashSet<>();
+        set.add("Apple");
+        set.add("Banana");
+        set.add("Cherry");
+        set.add("Mango");
 
-        System.out.println("Set1: " + set1);
-        System.out.println("Set2: " + set2);
+        System.out.println("all elements " + set);
+        set.remove("Banana");
 
-        Set<Integer> union = new HashSet<>(set1);
-        union.addAll(set2);
-        System.out.println("Union: " + union);
+        System.out.println("after removing Banana: " + set);
+        System.out.println("contains Mango? " + set.contains("Mango"));
 
-        Set<Integer> intersection = new HashSet<>(set1);
-        intersection.retainAll(set2);
-        System.out.println("Intersection: " + intersection);
+        System.out.println("set size: " + set.size());
+        System.out.println("is set empty? " + set.isEmpty());
 
-        Set<Integer> difference = new HashSet<>(set1);
-        difference.removeAll(set2);
-        System.out.println("Difference: " + difference);
+        System.out.println("iterating through elements:");
+        for (String s : set) {
+            System.out.println(s);
+        }
 
-        System.out.println("Contains 20? " + set1.contains(20));
-        System.out.println("Size of Set1: " + set1.size());
+        set.clear();
+        System.out.println("afer removing elements " + set);
     }
 }

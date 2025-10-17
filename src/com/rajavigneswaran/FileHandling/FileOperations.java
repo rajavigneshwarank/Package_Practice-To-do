@@ -9,7 +9,8 @@ public class FileOperations {
         File file = new File("demo.txt");
 
         while (true) {
-            System.out.println("\n=== FILE HANDLING APPLICATION ===");
+
+            System.out.println("FILE HANDLING APPLICATION");
             System.out.println("1. Create File");
             System.out.println("2. Write to File");
             System.out.println("3. Read from File");
@@ -22,6 +23,7 @@ public class FileOperations {
             try {
                 switch (ch) {
                     case 1:
+
                         if (file.createNewFile())
                             System.out.println("File created: " + file.getName());
                         else
@@ -39,11 +41,12 @@ public class FileOperations {
 
                     case 3:
                         if (!file.exists()) {
-                            System.out.println("File not found!");
+                            System.out.println("file not found!");
                             break;
                         }
                         Scanner fr = new Scanner(file);
                         System.out.println("\n--- File Content ---");
+
                         while (fr.hasNextLine()) {
                             System.out.println(fr.nextLine());
                         }
@@ -53,20 +56,23 @@ public class FileOperations {
 
                     case 4:
                         if (file.delete())
-                            System.out.println("File deleted successfully.");
+                            System.out.println("File deleted");
                         else
-                            System.out.println("File not found or deletion failed.");
+                            System.out.println("File not found ");
                         break;
 
                     case 5:
-                        System.out.println("Exiting application...");
+                        System.out.println("Exit application");
                         sc.close();
                         return;
 
                     default:
-                        System.out.println("Invalid choice! Please try again.");
+                        System.out.println("Invalid choice");
                 }
-            } catch (IOException e) {
+            }
+            catch (IOException e)
+            {
+
                 System.out.println("Error: " + e.getMessage());
             }
         }

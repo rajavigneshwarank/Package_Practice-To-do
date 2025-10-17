@@ -4,28 +4,26 @@ import java.util.*;
 
 public class HashMapDemo {
     public static void main(String[] args) {
-        HashMap<Integer, String> map = new HashMap<>();
-        map.put(1, "Java");
-        map.put(2, "Python");
-        map.put(3, "C++");
-        map.putIfAbsent(4, "Go");
-        map.put(5, "Rust");
+                HashMap<Integer, String> map = new HashMap<>();
+                map.put(1, "Apple");
+                map.put(2, "Banana");
+                map.put(3, "Cherry");
+                map.put(4, "Mango");
 
-        System.out.println("Initial Map: " + map);
-        map.replace(3, "C#");
-        map.remove(5);
+                System.out.println("all elements in map " + map);
 
-        System.out.println("After Modifications: " + map);
-        System.out.println("Keys: " + map.keySet());
-        System.out.println("Values: " + map.values());
-        System.out.println("Entries: " + map.entrySet());
+                System.out.println("value for key 2 : " + map.get(2));
 
-        map.computeIfPresent(2, (k, v) -> v + " Language");
-        map.merge(6, "Swift", (oldV, newV) -> oldV + "," + newV);
-        System.out.println("After computeIfPresent & merge: " + map);
+                map.remove(3);
+                System.out.println("after removing key 3: " + map);
 
-        System.out.println("Iterating using forEach:");
-        map.forEach((k, v) -> System.out.println(k + " -> " + v));
-    }
-}
+                System.out.println("contains key 4? " + map.containsKey(4));
+                System.out.println("contains value 'Apple'? " + map.containsValue("Apple"));
+
+                System.out.println("all keys: " + map.keySet());
+                System.out.println("all values: " + map.values());
+                System.out.println("all entries: " + map.entrySet());
+            }
+        }
+
 
